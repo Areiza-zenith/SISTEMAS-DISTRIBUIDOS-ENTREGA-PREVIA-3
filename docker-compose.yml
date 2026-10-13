@@ -1,0 +1,45 @@
+# Cluster HPC de tres nodos: master, nodo-0 (compute-0-0) y nodo-1 (compute-0-1)
+services:
+  master:
+    build: .
+    image: hpc-nodo
+    container_name: master
+    hostname: master
+    volumes:
+      - ./codigo:/home/mpiuser/codigo
+    networks:
+      numeroPI:
+        ipv4_address: 10.1.1.1
+      publica: {}
+
+  compute-0-0:
+    image: hpc-nodo
+    container_name: nodo-0
+    hostname: compute-0-0
+    depends_on: [master]
+    volumes:
+      - ./codigo:/home/mpiuser/codigo
+    networks:
+      numeroPI:
+        ipv4_address: 10.1.255.254
+
+  compute-0-1:
+    image: hpc-nodo
+    container_name: nodo-1
+    hostname: compute-0-1
+    depends_on: [master]
+    volumes:
+      - ./codigo:/home/mpiuser/codigo
+    networks:
+      numeroPI:
+        ipv4_address: 10.1.255.253
+
+networks:
+  numeroPI:            # red LAN interna del cluster (sin salida a Internet)
+    name: numeroPI
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.1.0.0/16
+  publica:             # red publica (NAT) solo para el master
+    name: publica
