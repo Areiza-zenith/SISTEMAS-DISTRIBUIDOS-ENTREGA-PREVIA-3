@@ -9,7 +9,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 USER mpiuser
 WORKDIR /home/mpiuser
 # Llave SSH sin contrasena, compartida por todos los nodos (misma imagen)
-RUN ssh-keygen -t rsa -N "" -f .ssh/id_rsa \
+RUN mkdir -p .ssh && chmod 700 .ssh && ssh-keygen -t rsa -N "" -f .ssh/id_rsa \
     && cat .ssh/id_rsa.pub >> .ssh/authorized_keys \
     && chmod 600 .ssh/authorized_keys \
     && echo "Host *" > .ssh/config \

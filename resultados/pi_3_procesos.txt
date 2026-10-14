@@ -1,0 +1,9 @@
+Proceso 1 de 3 en compute-0-0: k = [3000000000, 6000000000)
+Proceso 0 de 3 en master: k = [0, 3000000000)
+------------------------------------------
+Iteraciones      : 9000000000
+Procesos         : 3
+PI calculado     : 3.141592653477148
+Error absoluto   : 1.126e-10
+Tiempo ejecucion : 7.652 s
+Proceso 2 de 3 en compute-0-1: k = [6000000000, 9000000000)

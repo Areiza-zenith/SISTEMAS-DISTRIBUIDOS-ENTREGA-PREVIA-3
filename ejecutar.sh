@@ -1,6 +1,7 @@
 #!/bin/bash
 # Ejecuta todo el laboratorio paso a paso. En cada pausa, tome la captura indicada.
 cd "$(dirname "$0")"
+sudo iptables-legacy -P FORWARD ACCEPT 2>/dev/null; sudo iptables-legacy -I FORWARD -j ACCEPT 2>/dev/null
 mkdir -p resultados
 OPC="-machinefile machines --mca btl self,tcp --mca btl_tcp_if_include 10.1.0.0/16 --mca oob_tcp_if_include 10.1.0.0/16"
 M="docker exec -u mpiuser -w /home/mpiuser/codigo master"

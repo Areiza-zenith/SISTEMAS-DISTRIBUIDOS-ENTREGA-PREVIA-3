@@ -37,7 +37,6 @@ services:
 networks:
   numeroPI:            # red LAN interna del cluster (sin salida a Internet)
     name: numeroPI
-    internal: true
     ipam:
       config:
         - subnet: 10.1.0.0/16

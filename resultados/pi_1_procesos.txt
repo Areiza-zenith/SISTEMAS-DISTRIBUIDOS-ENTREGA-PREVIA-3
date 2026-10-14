@@ -1,0 +1,7 @@
+Proceso 0 de 1 en master: k = [0, 9000000000)
+------------------------------------------
+Iteraciones      : 9000000000
+Procesos         : 1
+PI calculado     : 3.141592653477197
+Error absoluto   : 1.126e-10
+Tiempo ejecucion : 12.694 s

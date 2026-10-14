@@ -1,0 +1,3 @@
+Soy el core nro. 0 de 3
+Soy el core nro. 1 de 3
+Soy el core nro. 2 de 3

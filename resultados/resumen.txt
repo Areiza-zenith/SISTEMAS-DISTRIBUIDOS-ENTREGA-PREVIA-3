@@ -1,0 +1,3 @@
+resultados/pi_1_procesos.txt:Tiempo ejecucion : 12.694 s
+resultados/pi_2_procesos.txt:Tiempo ejecucion : 12.774 s
+resultados/pi_3_procesos.txt:Tiempo ejecucion : 7.652 s
